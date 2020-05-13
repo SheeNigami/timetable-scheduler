@@ -10,7 +10,7 @@ This document should help you explain how your user interfaces are designed. You
 ### justification 1
 Below is the list of examples from websites i drew my inspirations to design the wireframe.
 
-![justification 3](/worksheets/wireframes/dataviewer_1.jpg)
+![justification 1](/worksheets/wireframes/dataviewer_1.jpg)
 link: https://cryptowat.ch/
 
 #### good points
