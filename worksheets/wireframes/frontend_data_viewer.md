@@ -5,8 +5,7 @@ This document should help you explain how your user interfaces are designed. You
 
 ## wireframe
 
-(i will do this tmr on 14/5/2020)
-
+![wireframe_data_viewer](/worksheets/wireframes/wireframe_data_viewer.jpg)
 ### justification 1
 Below is the list of examples from websites i drew my inspirations to design the wireframe.
 
