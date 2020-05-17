@@ -4,7 +4,9 @@ This document should help you explain how your user interfaces are designed. You
 
 ## Wireframe
 
-i will do this tmr on 14/5/2020.
+![wireframe_result_viewer](/worksheets/wireframes/wireframe_result_viewer.jpg)
+Draft 1 of wireframe result viewer! wireframe might be changed accordingly when the project progresses! all the updates to wireframe will be here! 
+
 
 ## Justifications
 
