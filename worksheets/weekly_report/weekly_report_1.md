@@ -4,15 +4,14 @@ This report is for you to document the progres of your project. You should also 
 
 ## What have I done last week
 
--   Worked on...
--   Worked on...
--   Changed....
+-   Setup the github branches, server, nodejs, express, and elephantsql database
+-   Did Research on various Dataviewer templates
+
 
 ## What do I plan to do next week
 
--   Worked on...
--   Worked on...
--   Changed....
+-   Start working on insert APIs for the database
+-   Draw wireframes and do justifications
 
 ## Additional Thoughts
 
