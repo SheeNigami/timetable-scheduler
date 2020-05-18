@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--bootstrap css  and datatable cdn-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css"> 
+        <link rel="stylesheet" href="proto.css">
+        <title>Frontend Draft 5.0 </title>
+        <!--Draft 5.0 is fully featured, might touch up abit on design-->
+        <!-- but all basic features are done but if i might come up with a btr design then-->
+        <!-- i will touch it up!!-->
+
+
+    </head>
+    <header>
+        <!-- 
+        7 - Navbar with brand left, links right, toggler right
+            The links collapse into the mobile menu
+        -->
+
+        <!-- technically the navbar is done to integrate with CA3 and CA4 so it might look awkward now(with only one link)-->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark"> <!--nav bar with bootstrap styling-->
+            <a href="index.html" class="navbar-brand font-italic bg-info">UNIVERSITY OF JURONG</a> <!--logo of university-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar7">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-stretch" id="navbar7"> <!--to click on the rightside-->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">DATA VIEWER</a>  
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <h1 class="text-center font-italic bg-warning">DATA VIEWER</h1> <!-- DATAviewer text in centre-->
+    </header>
+
+    <body class="col-lg-12 col-md col-sm col-xs responsive" style="background-image: url('wood_3.jpg'); background-size: 100% 100%" > <!--background image-->
+    <div class="container mb-5 mt-3 table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm	" >  <!-- container-->
+        <table class="table table-striped table-bordered mydatatable table-light " style="width: 100%"> <!-- stripped table-->
+        <thead> <!-- table header-->
+            <tr>  <!-- table row-->
+                <th>Lecture</th>  <!-- attribute name-->
+                <th>LectureId</th>  <!-- attribute name-->
+                <th>factultyId</th> <!-- attribute name-->
+                <th>semesterId</th> <!-- attribute name-->
+                <th>dayOfWeek</th> <!-- attribute name-->
+                <th>startTime</th> <!-- attribute name-->
+                <th>endTime</th> <!-- attribute name-->
+            </tr>
+        </thead>
+ <tbody> <!--table body-->
+     <tr> <!-- table row-->
+         <td>Calculus 1</td> <!--lecture name-->
+         <td>MS0156</td> <!--lecutere module code-->
+         <td>Lecture hall 1</td> <!--lecture venue, theres like 3/4 venues (lecture hall 1 to 4)-->
+         <td>semester 1</td> <!--which sem does the lecture/module belongs to (idk thats how i intepret semster id i might be wrong)-->
+         <td>Monday</td> <!--means which day (monday to sunday) the lecture is on-->
+         <td>0930</td>  <!--time of lecture start-->
+         <td>1130</td>   <!-- time of lecture end-->
+        </tr>
+        <tr>
+            <td>Calculus 2</td> <!--lecture name-->
+            <td>MS0157</td> <!--lecutere module code-->
+            <td>Lecture hall 1</td> <!--lecture venue, theres like 3/4 venues (lecture hall 1 to 4)-->
+            <td>semester 1</td> <!--which sem does the lecture/module belongs to (idk thats how i intepret semster id i might be wrong)-->
+            <td>Monday</td> <!--means which day (monday to sunday) the lecture is on-->
+            <td>1130</td>  <!--time of lecture start-->
+            <td>1330</td>   <!-- time of lecture end-->
+           </tr>
+           <tr>
+            <td>Calculus 3</td> <!--lecture name-->
+            <td>MS0158</td> <!--lecutere module code-->
+            <td>Lecture hall 1</td> <!--lecture venue, theres like 3/4 venues (lecture hall 1 to 4)-->
+            <td>semester 1</td> <!--which sem does the lecture/module belongs to (idk thats how i intepret semster id i might be wrong)-->
+            <td>Monday</td> <!--means which day (monday to sunday) the lecture is on-->
+            <td>1330</td>  <!--time of lecture start-->
+            <td>1530</td>   <!-- time of lecture end-->
+           </tr>
+           <tr>
+            <td>Macro economics</td> <!--lecture name-->
+            <td>EC0140</td> <!--lecutere module code-->
+            <td>Lecture hall 2</td> <!--lecture venue, theres like 3/4 venues (lecture hall 1 to 4)-->
+            <td>semester 1</td> <!--which sem does the lecture/module belongs to (idk thats how i intepret semster id i might be wrong)-->
+            <td>Monday</td> <!--means which day (monday to sunday) the lecture is on-->
+            <td>0930</td>  <!--time of lecture start-->
+            <td>1130</td>   <!-- time of lecture end-->
+           </tr>
+           <tr>
+            <td>Fundamentals of accounting</td> <!--lecture name-->
+            <td>BAC0145</td> <!--lecutere module code-->
+            <td>Lecture hall 3</td> <!--lecture venue, theres like 3/4 venues (lecture hall 1 to 4)-->
+            <td>semester 1</td> <!--which sem does the lecture/module belongs to (idk thats how i intepret semster id i might be wrong)-->
+            <td>Monday</td> <!--means which day (monday to sunday) the lecture is on-->
+            <td>0930</td>  <!--time of lecture start-->
+            <td>1130</td>   <!-- time of lecture end-->
+           </tr>
+           <tr>
+            <td>Introduction To Cryptograph</td> <!--lecture name-->
+            <td>CS0123</td> <!--lecutere module code-->
+            <td>Lecture hall 4</td> <!--lecture venue, theres like 3/4 venues (lecture hall 1 to 4)-->
+            <td>semester 1</td> <!--which sem does the lecture/module belongs to (idk thats how i intepret semster id i might be wrong)-->
+            <td>Tuesday</td> <!--means which day (monday to sunday) the lecture is on-->
+            <td>0930</td>  <!--time of lecture start-->
+            <td>1130</td>   <!-- time of lecture end-->
+           </tr>
+           <tr>
+            <td>Backend Web Development</td> <!--lecture name-->
+            <td>CS0213</td> <!--lecutere module code-->
+            <td>Lecture hall 2</td> <!--lecture venue, theres like 3/4 venues (lecture hall 1 to 4)-->
+            <td>semester 1</td> <!--which sem does the lecture/module belongs to (idk thats how i intepret semster id i might be wrong)-->
+            <td>Wednesday</td> <!--means which day (monday to sunday) the lecture is on-->
+            <td>0930</td>  <!--time of lecture start-->
+            <td>1130</td>   <!-- time of lecture end-->
+           </tr>
+           <tr>
+            <td>Macro economics</td> <!--lecture name-->
+            <td>EC0140</td> <!--lecutere module code-->
+            <td>Lecture hall </td> <!--lecture venue, theres like 3/4 venues (lecture hall 1 to 4)-->
+            <td>semester 3</td> <!--which sem does the lecture/module belongs to (idk thats how i intepret semster id i might be wrong)-->
+            <td>Monday</td> <!--means which day (monday to sunday) the lecture is on-->
+            <td>1130</td>  <!--time of lecture start-->
+            <td>1330</td>   <!-- time of lecture end-->
+           </tr>
+           <tr>
+            <td>Macro economics</td> <!--lecture name-->
+            <td>EC0140</td> <!--lecutere module code-->
+            <td>Lecture hall </td> <!--lecture venue, theres like 3/4 venues (lecture hall 1 to 4)-->
+            <td>semester 3</td> <!--which sem does the lecture/module belongs to (idk thats how i intepret semster id i might be wrong)-->
+            <td>wednesday</td> <!--means which day (monday to sunday) the lecture is on-->
+            <td>1130</td>  <!--time of lecture start-->
+            <td>1330</td>   <!-- time of lecture end-->
+           </tr>
+           <tr>
+            <td>Macro economics</td> <!--lecture name-->
+            <td>EC0140</td> <!--lecutere module code-->
+            <td>Lecture hall </td> <!--lecture venue, theres like 3/4 venues (lecture hall 1 to 4)-->
+            <td>semester 4</td> <!--which sem does the lecture/module belongs to (idk thats how i intepret semster id i might be wrong)-->
+            <td>Friday</td> <!--means which day (monday to sunday) the lecture is on-->
+            <td>1130</td>  <!--time of lecture start-->
+            <td>1230</td>   <!-- time of lecture end-->
+           </tr>
+           <tr>
+            <td>Calculus 1</td> <!--lecture name-->
+            <td>MS0156</td> <!--lecutere module code-->
+            <td>Lecture hall </td> <!--lecture venue, theres like 3/4 venues (lecture hall 1 to 4)-->
+            <td>semester 3</td> <!--which sem does the lecture/module belongs to (idk thats how i intepret semster id i might be wrong)-->
+            <td>Wednesday</td> <!--means which day (monday to sunday) the lecture is on-->
+            <td>1130</td>  <!--time of lecture start-->
+            <td>1330</td>   <!-- time of lecture end-->
+           </tr>           <tr>
+            <td>Calculus 2</td> <!--lecture name-->
+            <td>MS0157</td> <!--lecutere module code-->
+            <td>Lecture hall </td> <!--lecture venue, theres like 3/4 venues (lecture hall 1 to 4)-->
+            <td>semester 2</td> <!--which sem does the lecture/module belongs to (idk thats how i intepret semster id i might be wrong)-->
+            <td>Tuesday</td> <!--means which day (monday to sunday) the lecture is on-->
+            <td>1130</td>  <!--time of lecture start-->
+            <td>1330</td>   <!-- time of lecture end-->
+           </tr>           <tr>
+            <td>Calculus 3</td> <!--lecture name-->
+            <td>MS0158</td> <!--lecutere module code-->
+            <td>Lecture hall </td> <!--lecture venue, theres like 3/4 venues (lecture hall 1 to 4)-->
+            <td>semester 2</td> <!--which sem does the lecture/module belongs to (idk thats how i intepret semster id i might be wrong)-->
+            <td>Tuesday</td> <!--means which day (monday to sunday) the lecture is on-->
+            <td>1130</td>  <!--time of lecture start-->
+            <td>1330</td>   <!-- time of lecture end-->
+           </tr>          
+  </tbody>
+        <tfoot> <!-- table footer --> <!-- implemented cuz sometimes data is too long then very hard to see which attributes for which row-->
+            <tr>
+                <th>Lecture</th> 
+                <th>LectureId</th>
+                <th>factultyId</th>
+                <th>semesterId</th>
+                <th>dayOfWeek</th>
+                <th>startTime</th>
+                <th>endTime</th>
+            </tr>
+
+        </tfoot>
+    </table> 
+    <footer class="mainfooter" role="contentinfo"> <!-- table footer-->
+        <div class="footer-middle">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-md col-sm col-xs">
+              <!--Column1-->
+              <div class="footer-pad">
+                <h4>ADDRESS</h4>  <!-- address-->
+                <ul class="list-unstyled">
+                    <p>JURONG WEST STREET 912 </p>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-12 copy"> <!-- copyright-->
+                  <p class="text-center">&copy; Copyright 2020 - UNIVERSITY OF JURONG.  All rights reserved.</p>
+              </div>
+          </div>
+          
+      
+        </div>
+        </div>
+      </footer>
+        
+    </div>
+    <!--js cdn -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+     <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+     <script>
+         $('.mydatatable').DataTable({
+            order: [[3, 'asc']], // third column by default is aseending
+             pagingType: 'full_numbers', 
+             lengthMenu: [[5,10,25,50,-1],[5,10,25,50,"All"]], // to create custom to show number of entries
+
+         });
+         
+              </script>
+</body>
+</html>

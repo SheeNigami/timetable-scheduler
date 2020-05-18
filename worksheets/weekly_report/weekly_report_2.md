@@ -4,17 +4,17 @@ This report is for you to document the progres of your project. You should also 
 
 ## What have I done last week
 
--   Start working on insert APIs for the database
--   Draw wireframes and do justifications
+-finalized project planning
+-finished research on wireframes
+-designing algorithms
 
 ## What do I plan to do next week
 
--   Make the required get requests in the API
--   Start connecting the frontend to the backend.
--   Work on worksheet challenges, documentation, etc
+-do up a draft( first draft on wireframe for result viewer and dataviewer)
+-after designing wireframe, start on html for dataviewer.
+-implement api
 
 ## Additional Thoughts
 
--   VSCode is sick.
--   This addon is fabulous.
--   Lecturer is awesome.
+- everything is going fine
+- 

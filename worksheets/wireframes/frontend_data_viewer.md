@@ -5,7 +5,10 @@ This document should help you explain how your user interfaces are designed. You
 
 ## wireframe
 
-(i will do this tmr on 14/5/2020)
+![wireframe_data_viewer](/worksheets/wireframes/wireframe_data_viewer.jpg)
+Draft 1 of data viewer wireframe, will be changed as we go along the project to implement better features and styling.
+
+Draft 2  ( to be uploaded on 19/5/2020)
 
 ### justification 1
 Below is the list of examples from websites i drew my inspirations to design the wireframe.
