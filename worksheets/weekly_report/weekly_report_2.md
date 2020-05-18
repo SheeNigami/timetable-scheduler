@@ -4,15 +4,14 @@ This report is for you to document the progres of your project. You should also 
 
 ## What have I done last week
 
--   Worked on...
--   Worked on...
--   Changed....
+-   Start working on insert APIs for the database
+-   Draw wireframes and do justifications
 
 ## What do I plan to do next week
 
--   Worked on...
--   Worked on...
--   Changed....
+-   Make the required get requests in the API
+-   Start connecting the frontend to the backend.
+-   Work on worksheet challenges, documentation, etc
 
 ## Additional Thoughts
 
