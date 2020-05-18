@@ -7,8 +7,17 @@ This document should help you explain how your user interfaces are designed. You
 
 ![wireframe_data_viewer](/worksheets/wireframes/wireframe_data_viewer.jpg)
 Draft 1 of data viewer wireframe, will be changed as we go along the project to implement better features and styling.
+Draft 1 is a prototype to be improved on. It consist of all required features as such.
+Draft 1 is designed on 13/5/2020 
 
-Draft 2  ( to be uploaded on 19/5/2020)
+Draft 2  of data viewer wireframe - added features such as sorting, new design and layout! also i redid the column tables as i feel that this will be more oranised. Designs include black and light colours to show contrast!( inspired by justification)
+![wireframe_data_viewer_2](/worksheets/wireframes/wireframe_data_viewer_2.jpg)
+Draft 2 is designed on 17/5/2020 
+
+Draft 3 of data viewer will be uploaded on 19/5/2020 - will feature new columns(start and end time of lecutres),filters~!
+
+
+
 
 ### justification 1
 Below is the list of examples from websites i drew my inspirations to design the wireframe.
