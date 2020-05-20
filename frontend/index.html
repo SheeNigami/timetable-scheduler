@@ -7,10 +7,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css"> 
         <link rel="stylesheet" href="proto.css">
-        <title>Frontend Draft 5.0 </title>
-        <!--Draft 5.0 is fully featured, might touch up abit on design-->
-        <!-- but all basic features are done but if i might come up with a btr design then-->
-        <!-- i will touch it up!!-->
+        <title>index.html </title>
 
 
     </head>
@@ -22,7 +19,7 @@
 
         <!-- technically the navbar is done to integrate with CA3 and CA4 so it might look awkward now(with only one link)-->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark"> <!--nav bar with bootstrap styling-->
-            <a href="index.html" class="navbar-brand font-italic bg-info">UNIVERSITY OF JURONG</a> <!--logo of university-->
+            <a href="index.html" class="navbar-brand font-italic bg-info">JIBABOOM</a> <!--logo of university-->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar7">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -166,7 +163,8 @@
             <td>Tuesday</td> <!--means which day (monday to sunday) the lecture is on-->
             <td>1130</td>  <!--time of lecture start-->
             <td>1330</td>   <!-- time of lecture end-->
-           </tr>          
+           </tr>         
+            
   </tbody>
         <tfoot> <!-- table footer --> <!-- implemented cuz sometimes data is too long then very hard to see which attributes for which row-->
             <tr>
@@ -178,6 +176,7 @@
                 <th>startTime</th>
                 <th>endTime</th>
             </tr>
+            
 
         </tfoot>
     </table> 
@@ -198,7 +197,7 @@
           </div>
           <div class="row">
               <div class="col-md-12 copy"> <!-- copyright-->
-                  <p class="text-center">&copy; Copyright 2020 - UNIVERSITY OF JURONG.  All rights reserved.</p>
+                  <p class="text-center">&copy; Copyright 2020 - JIBABOOM.  All rights reserved.</p>
               </div>
           </div>
           
@@ -217,11 +216,33 @@
      <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
      <script>
          $('.mydatatable').DataTable({
-            order: [[3, 'asc']], // third column by default is aseending
-             pagingType: 'full_numbers', 
-             lengthMenu: [[5,10,25,50,-1],[5,10,25,50,"All"]], // to create custom to show number of entries
+            order: [[3, 'asc']],  
+            pagingType: 'full_numbers', 
+             lengthMenu: [[5,10,25,50,-1],[5,10,25,50,"All"]],
+             initComplete: function () {
+                 this.api().columns([1,2]).every( function(){
+                    var column = this;
+                    var select = $('<select><option value=""></option></select>')
+                .appendTo($(column.footer()).empty() )
+                .on('change', function () {
+                    var val = $.fn.DataTable.util.escapeRegex(
+                        $(this).val()
+                    );
+                    column
+                    .search(val ? '^'+val+'$' : '',true,false)
+                    .draw();
+                });
+                column.data().unique().sort().each(function (d,j) {
+                    select.append( '<option value="'+d+'">'+d+'</option>' )
+                })
 
-         });
+                 })
+
+             }
+         })
+
+         
+ 
          
               </script>
 </body>
