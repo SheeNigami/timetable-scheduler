@@ -52,4 +52,4 @@ Draft 1 of wireframe result viewer! wireframe might be changed accordingly when 
 #### Bad Points
 1) dull looking UI
 2) Extra rows( on weekends) when there is completely no lessons.
-3) bad UI( some buttons dont work but idk what does it do too)
+3) bad UI( like the button on top right, doesnt make sense why its there and what does it to( the purpose))
