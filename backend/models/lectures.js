@@ -9,7 +9,7 @@ const Lectures = {
     getAllLectures: function() {
         return db.any('SELECT * FROM Lectures')
     },
-    insertLectures: function(data) { // data is an array of lectures
+    insertLectures: function(data) { 
         const query = pgp.helpers.insert(data, cs);
         return db.none(query);
     }
