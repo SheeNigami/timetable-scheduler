@@ -11,12 +11,12 @@ The following are examples of how you can create a table, replace the examples w
 ```sql
 
 CREATE TABLE lectures (
-        lectureid CHAR(10) PRIMARY KEY, 
-        facultyid CHAR(10) NOT NULL,
-        semesterid CHAR(10) NOT NULL,
-        dayOfWeek CHAR(1) NOT NULL,
-        startTime CHAR(4) NOT NULL,
-        endTime CHAR(4) NOT NULL
+        "lectureId" CHAR(10) PRIMARY KEY, 
+        "facultyId" CHAR(10) NOT NULL,
+        "semesterId" CHAR(10) NOT NULL,
+        "dayOfWeek" CHAR(1) NOT NULL,
+        "startTime" CHAR(4) NOT NULL,
+        "endTime" CHAR(4) NOT NULL
 )
 
 

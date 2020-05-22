@@ -18,4 +18,13 @@ app.get('/lectures', (req, res) => {
     });
 });
 
+app.post('/lectures', (req, res) => {
+    Lectures.insertLectures(req.body.data).then(() => {
+        res.status(201).send({'results': 'success'});
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).send({"error": err.detail, 'code': err.code});
+    })
+})
+
 module.exports = app;
