@@ -15,7 +15,7 @@ Each API should include
 
 > Errors and it's corresponding code can be defined by yourself. You need not follow HTTP errors.
 
-## Get Data
+## Get All Data (Lectures)
 
 | attribute   | value       |
 | ----------- | ----------- |
@@ -26,7 +26,7 @@ Each API should include
 
 | parameter | datatype        | example   |
 | --------- | --------------- | --------- |
-| id        | 10 digit number | 123456789 |
+| NIL       | NIL             | NIL       |
 
 ### Response Body
 
