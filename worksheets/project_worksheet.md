@@ -36,8 +36,8 @@ Link: [Use Case Diagram](https://www.plantuml.com/plantuml/svg/0/RP5D4e8m38NtFKM
 
 The above listed are functional requirements, that is, **WHAT** the system should allow users to do. There are also non-functional requirements that state **HOW** a system should perform.
 
--   Q1. Consider the use case of `Compute basic/advance result`, **HOW** is this functionality made available to both JiBaBoom and Adminstrator _(Hint: They are different)_? `(Answer Here)`
--   Q2. Consider the use case of `Insert basic/advance data`. **HOW** is the data stored? `(Answer Here)`
+-   Q1. Consider the use case of `Compute basic/advance result`, **HOW** is this functionality made available to both JiBaBoom and Adminstrator _(Hint: They are different)_? ``
+-   Q2. Consider the use case of `Insert basic/advance data`. **HOW** is the data stored? `Data is stored in a database in the cloud, via elephantSQL`
 
 ---
 
@@ -76,10 +76,10 @@ Link: [Component Diagram](https://www.plantuml.com/plantuml/svg/0/JK-x3i8m3Dpz5L
 
 ### Questions:
 
-1. Does the frontend communicate with the mobile? `(Yes/No)`
-2. Does the frontend communicate directly with the database? `(Yes/No)`
-3. How should the frontend display data from the database? `(Answer here)`
-4. How does the frontend communicate with backend? `(Answer here)`
+1. Does the frontend communicate with the mobile? `(Yes)`
+2. Does the frontend communicate directly with the database? `(No)`
+3. How should the frontend display data from the database? `(By commuting to the backend, and using data retrieved by the backend(API) from the database)`
+4. How does the frontend communicate with backend? `(By sending HTTP requests to the backend endpoints, which sends back responses)`
 
 ---
 
@@ -151,22 +151,26 @@ Links:
 
 Choose the correct API/Viewer to be used for each of the `???` steps in the diagram:
 
--   Q1. `[Insert/Result]` API (Delete one of the options)
--   Q2. `[Data/Result]` Viewer
--   Q3. `[Insert/Result]` API
--   Q4. `[Data/Result]` Viewer
--   Q5. `[Insert/Result]` API
+-   Q1. `[Insert]` API (Delete one of the options)
+-   Q2. `[Data]` Viewer
+-   Q3. `[Result]` API
+-   Q4. `[Result]` Viewer
+-   Q5. `[Result]` API
 
 There's a note that mentions
 
 ```
-how can frontend/mobile\nget data from backend?
+how can frontend/mobile get data from backend?
 ```
 
 Think about how you can do it and type your answer below:
 
 ```
-[Answer Here]
+The frontend/mobile can get data from the backend by communicating with the backend
+by sending HTTP requests to it. These HTTP requests will reach the backend, which 
+will then retrieve the desired data from the backend and send a response back to
+the frontend with the wanted data, hence "getting" data from the backend.
+
 ```
 
 ---
