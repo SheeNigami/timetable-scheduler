@@ -4,7 +4,9 @@ This document should help you explain how your user interfaces are designed. You
 
 ## Wireframe
 
-i will do this tmr on 14/5/2020.
+![wireframe_result_viewer](/worksheets/wireframes/wireframe_result_viewer.jpg)
+Draft 1 of wireframe result viewer! wireframe might be changed accordingly when the project progresses! all the updates to wireframe will be here! 
+
 
 ## Justifications
 
@@ -45,9 +47,9 @@ i will do this tmr on 14/5/2020.
 #### Good Points
 1) time duration for each course is label clear and concised
 2) easy to understand and navigate
-3)
+3) does its job as a timetable(to see the time for various courses)
 
 #### Bad Points
 1) dull looking UI
 2) Extra rows( on weekends) when there is completely no lessons.
-3) 
+3) bad UI( like the button on top right, doesnt make sense why its there and what does it to( the purpose))

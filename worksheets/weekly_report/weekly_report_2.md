@@ -4,18 +4,17 @@ This report is for you to document the progres of your project. You should also 
 
 ## What have I done last week
 
--   Worked on...
--   Worked on...
--   Changed....
+-finalized project planning
+-finished research on wireframes
+-designing algorithms
 
 ## What do I plan to do next week
 
--   Worked on...
--   Worked on...
--   Changed....
+-do up a draft( first draft on wireframe for result viewer and dataviewer)
+-after designing wireframe, start on html for dataviewer.
+-implement api
 
 ## Additional Thoughts
 
--   VSCode is sick.
--   This addon is fabulous.
--   Lecturer is awesome.
+- everything is going fine
+- 
