@@ -22,13 +22,13 @@ Based on your chosen rules, give an example of a code that follows the code styl
 - Case Style
 
 ```js
-camelCase
+var camelCase;
 ```
 
 - Acronym Case
 
 ```js
-Id
+var Id;
 ```
 
 - Indentation
@@ -59,13 +59,13 @@ var id;
 - Case Style
 
 ```js
-not_camel_case
+var not_camel_case;
 ```
 
 - Acronym Case
 
 ```js
-IBM
+var ID;
 ```
 
 - Indentation
