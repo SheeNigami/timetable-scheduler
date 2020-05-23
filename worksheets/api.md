@@ -31,16 +31,24 @@ Each API should include
 ### Response Body
 
 ```json
-{
-    "result": [
-        {
-            "id": number,
-            "property1": number,
-            "property2": string,
-            ...
-        }
-    ]
-}
+[
+    {
+        "lectureId": "1234567894",
+        "facultyId": "1234567890",
+        "semesterId": "1234567890",
+        "dayOfWeek": "2",
+        "startTime": "1000",
+        "endTime": "1030"
+    },
+    {
+        "lectureId": "2234567893",
+        "facultyId": "1234567890",
+        "semesterId": "1234567890",
+        "dayOfWeek": "3",
+        "startTime": "1000",
+        "endTime": "1030"
+    }
+]
 ```
 
 ### Error
