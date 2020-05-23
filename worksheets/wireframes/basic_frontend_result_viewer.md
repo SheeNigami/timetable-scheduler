@@ -4,14 +4,14 @@ This document should help you explain how your user interfaces are designed. You
 
 ## Wireframe
 
-![wireframe_result_viewer](/worksheets/assets/wireframes/wireframe_result_viewer.jpg)
+![wireframe_result_viewer](/worksheets/wireframes/assets/wireframe_result_viewer.jpg)
 Draft 1 of wireframe result viewer! wireframe might be changed accordingly when the project progresses! all the updates to wireframe will be here! 
 
 
 ## Justifications
 
 ### Justification 1
-![justification 1](/worksheets/assets/wireframes/resultviewer_1.jpg)
+![justification 1](/worksheets/wireframes/assets/resultviewer_1.jpg)
 
 
 #### Good Points
@@ -28,7 +28,7 @@ Draft 1 of wireframe result viewer! wireframe might be changed accordingly when 
 
 ### Justification 2
 
-![justification 2](/worksheets/assets/wireframes/resultviewer_2.jpg)
+![justification 2](/worksheets/wireframes/assets/resultviewer_2.jpg)
 
 #### Good Points
 1)Good looking Userinterface
@@ -42,7 +42,7 @@ Draft 1 of wireframe result viewer! wireframe might be changed accordingly when 
 
 ### Justification 3
 
-![justification 3](/worksheets/assets/wireframes/resultviewer_3.jpg)
+![justification 3](/worksheets/wireframes/assets/resultviewer_3.jpg)
 
 #### Good Points
 1) time duration for each course is label clear and concised
