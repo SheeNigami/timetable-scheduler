@@ -163,8 +163,7 @@ Modified to increase difficulty of problem
 | From Time | To Time | Suplus/Lack |
 | --------- | ------- | ----------- |
 | 1000      | 1030    | Surplus 1   |
-| 1030      | 1100    | 0           |
-| 1100      | 1130    | 0           |
+| 1030      | 1130    | 0           |
 
 ## Query 2
 
