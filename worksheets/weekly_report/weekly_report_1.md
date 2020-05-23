@@ -5,18 +5,18 @@ This report is for you to document the progres of your project. You should also 
 ## What have I done last week
 - maked group
 - icebreaker
-- decide on which problem to solve
-- research abit on wireframes
-- github push and pull 
-- setup github
+- decide which problem to solve
 - distribute workload
+- research abit on wireframes
+- decide libraries and packages to use
 
 
 ## What do I plan to do next week
 
--do more research on wireframes for data result viewer
--start to design algorithms and api for backend
 - finalize project planning( workload, problems, datelines etc)
+- do more research on wireframes for data result viewer
+- setup node environment and database
+- setup github branches for simulaneous working for both teammates
 
 
 ## Additional Thoughts

@@ -4,18 +4,17 @@ This report is for you to document the progres of your project. You should also 
 
 ## What have I done last week
 
--   Worked on...
--   Worked on...
--   Changed....
+-   Finalised Front-End HTML and CSS
+-   Made Datatable filtering, pagination, sorting with DataTable
+-   Connected Front-End to Back-end using DataTable AJAX
+-   Made sure everything is working
+-   Finished all worksheets and documentation
 
 ## What do I plan to do next week
 
--   Worked on...
--   Worked on...
--   Changed....
+-   Rest and start on next term's work :)
 
 ## Additional Thoughts
 
--   VSCode is sick.
--   This addon is fabulous.
--   Lecturer is awesome.
+-   Yay, done with first term's assignment
+-   Project was fun and accomplishing

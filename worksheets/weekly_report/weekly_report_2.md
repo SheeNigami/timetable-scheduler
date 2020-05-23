@@ -4,17 +4,19 @@ This report is for you to document the progres of your project. You should also 
 
 ## What have I done last week
 
--finalized project planning
--finished research on wireframes
--designing algorithms
+- finalized project planning
+- finished research on wireframes
+- Setup frontend and dev branches (frontend for ao yang and dev for sheen hern)
+- Created Database on elephant sql as well as lecture table
+- Setup node environment, installed required packages
+- Created backend server and connected to elephantsql database
 
 ## What do I plan to do next week
 
--do up a draft( first draft on wireframe for result viewer and dataviewer)
--after designing wireframe, start on html for dataviewer.
--implement api
+- do up a draft( first draft on wireframe for result viewer and dataviewer)
+- after designing wireframe, start on html for dataviewer.
+- Start working on basic insert API
 
 ## Additional Thoughts
 
-- everything is going fine
-- 
+- everything is going well

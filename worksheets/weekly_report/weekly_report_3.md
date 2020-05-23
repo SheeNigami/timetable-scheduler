@@ -4,15 +4,17 @@ This report is for you to document the progres of your project. You should also 
 
 ## What have I done last week
 
--finished designing wireframes, and uploaded on github
--finished frontend dataviewer
+- Finished designing wireframes
+- Made a prototype of basic dataviewer 
+- Finished implementing Basic Insert API, which supports all requirements
 
 
 ## What do I plan to do next week
 
-- touch up on designs
--
+- Merge frontend and dev branch
+- Start connecting the frontend to the backend
 
 ## Additional Thoughts
 
-- vscode black theme > white theme
+- Vscode black theme > white theme
+- Had fun experiencing developing with a team using git
