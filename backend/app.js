@@ -14,7 +14,7 @@ app.get('/basic/data', (req, res) => {
         res.status(200).send(allLectures);
     }).catch((err) => {
         console.log(err);
-        res.status(500).send();
+        res.status(500).send(err);
     });
 });
 
