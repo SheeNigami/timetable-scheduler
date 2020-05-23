@@ -2,7 +2,7 @@
 
 This document helps you identify the smaller tasks and helps you create a rough schedule for you and your partner to follow
 
-## Tasks
+## Tasks (Also done on Github Issues, all issues are done and CLOSED)
 
 1. Basic
     1. Frontend
