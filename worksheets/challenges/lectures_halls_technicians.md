@@ -44,8 +44,8 @@ Name of problem: **Interval Scheduling**
 
 | lectureId  | Hall # |
 | ---------- | ------ |
-| 1000000001 | ?      |
-| 1000000002 | ?      |
+| 1000000001 | 1      |
+| 1000000002 | 2      |
 
 ## Query 2
 
@@ -59,7 +59,9 @@ Name of problem: **Interval Scheduling**
 
 | lectureId  | Hall # |
 | ---------- | ------ |
-| 100000000? | ?      |
+| 1000000003 | 1      |
+| 1000000004 | 1      |
+| 1000000005 | 2      |
 
 > Which lectures are invovled and which halls are they allocated to?
 
@@ -75,7 +77,10 @@ Name of problem: **Interval Scheduling**
 
 | lectureId  | Hall # |
 | ---------- | ------ |
-| 100000000? | ?      |
+| 1000000006 | 1      |
+| 1000000007 | 1      |
+| 1000000008 | 2      |
+| 1000000009 | 3      |
 
 > Which lectures are invovled and which halls are they allocated to?
 
@@ -91,7 +96,11 @@ Name of problem: **Interval Scheduling**
 
 | lectureId  | Hall # |
 | ---------- | ------ |
-| 100000000? | ?      |
+| 1000000010 | 1      |
+| 1000000011 | 1      |
+| 1000000012 | 2      |
+| 1000000013 | 3      |
+| 1000000014 | 4      |
 
 > Which lectures are invovled and which halls are they allocated to?
 
@@ -155,7 +164,7 @@ Modified to increase difficulty of problem
 | --------- | ------- | ----------- |
 | 1000      | 1030    | Surplus 1   |
 | 1030      | 1100    | 0           |
-| 1100      | ?       | ???         |
+| 1100      | 1130    | 0           |
 
 ## Query 2
 
@@ -169,7 +178,11 @@ Modified to increase difficulty of problem
 
 | From Time | To Time | Suplus/Lack |
 | --------- | ------- | ----------- |
-| ?         | ?       | ???         |
+| 1000      | 1030    | 0           |
+| 1030      | 1100    | Lack 1      |
+| 1100      | 1200    | 0           |
+| 1200      | 1230    | Lack 1      |
+| 1230      | 1300    | 0           |
 
 ## Query 3
 
@@ -183,7 +196,12 @@ Modified to increase difficulty of problem
 
 | From Time | To Time | Suplus/Lack |
 | --------- | ------- | ----------- |
-| ?         | ?       | ???         |
+| 0900      | 1030    | 0           |
+| 1030      | 1100    | Lack 2      |
+| 1100      | 1200    | 0           |
+| 1200      | 1230    | Lack 2      |
+| 1230      | 1300    | Lack 1      |
+| 1300      | 1400    | 0           |
 
 ## Query 4
 
@@ -197,4 +215,12 @@ Modified to increase difficulty of problem
 
 | From Time | To Time | Suplus/Lack |
 | --------- | ------- | ----------- |
-| ?         | ?       | ???         |
+| 0800      | 0900    | Surplus 1   |
+| 0900      | 1000    | 0           |
+| 1000      | 1030    | Surplus 1   |
+| 1030      | 1100    | 0           |
+| 1100      | 1200    | Surplus 1   |
+| 1200      | 1215    | 0       1   |
+| 1215      | 1230    | Surplus 1   |
+| 1230      | 1300    | Surplus 2   |
+| 1300      | 1500    | Surplus 1   |
