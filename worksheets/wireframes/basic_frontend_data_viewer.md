@@ -1,4 +1,4 @@
-# Wireframe & Justification (DRAFT 1 - will change accordingly as we go along)
+# Wireframe & Justification
 
 This document should help you explain how your user interfaces are designed. You should have a wireframe to give a good overview and some screenshot with simple writeups to justify your designs. 
 
