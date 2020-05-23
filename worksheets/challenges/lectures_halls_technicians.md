@@ -219,7 +219,7 @@ Modified to increase difficulty of problem
 | 1000      | 1030    | Surplus 1   |
 | 1030      | 1100    | 0           |
 | 1100      | 1200    | Surplus 1   |
-| 1200      | 1215    | 0       1   |
+| 1200      | 1215    | 0           |
 | 1215      | 1230    | Surplus 1   |
 | 1230      | 1300    | Surplus 2   |
 | 1300      | 1500    | Surplus 1   |
