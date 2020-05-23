@@ -18,13 +18,3 @@ CREATE TABLE lectures (
         "startTime" CHAR(4) NOT NULL,
         "endTime" CHAR(4) NOT NULL
 )
-
-
--- CREATE TABLE technicians (
---         technicianid CHAR(10)PRIMARY KEY, 
---         facultyid CHAR(10) NOT NULL,
---         semesterid CHAR(10) NOT NULL,
---         dayOfWeek CHAR(7) NOT NULL,
---         startTime CHAR(4) NOT NULL,
---         endTime CHAR(4) NOT NULL
--- )

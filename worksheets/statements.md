@@ -4,14 +4,16 @@ For this worksheet you will need to provide an example of your own SQL statement
 
 ## INSERT
 
-Example:
 ```sql
-INSERT INTO table_name (attr1, attr2,...) VALUES (value1, value2, ...);
+INSERT INTO Lectures
+VALUES
+(1234567890, 1234567890, 1234567890, 1, 1030, 1130);
 ```
 
-## SELECT with Filtering and Pagination
+## SELECT 
 
-Example:
 ```sql
-SELECT * FROM table_name WHERE attr1 == value1 AND attr2 >= value2 LIMIT 10 OFFSET 20;
+SELECT * FROM Lectures 
+WHERE
+"dayOfWeek" = '1';
 ```
