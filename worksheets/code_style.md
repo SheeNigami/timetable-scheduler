@@ -6,12 +6,12 @@ This documents helps to guide the look and feel of the code so that even when th
 
 | Rules             | Choices                         |
 | ----------------- | ------------------------------- |
-| Case Styles       | camelCase/snake_case/PascalCase |
-| Acronym Case      | IBM/Ibm/ibm                     |
-| Indentation Style | Allman/1TBS                     |
-| Indentation       | Tabs/Space                      |
-| Indentation Space | 2/4 spaces                      |
-| Semicolon         | Optional/Mandatory              |
+| Case Styles       | camelCase                       |
+| Acronym Case      | Ibm                             |
+| Indentation Style | 1TBS                            |
+| Indentation       | Space                           |
+| Indentation Space | 4 spaces                        |
+| Semicolon         | Mandatory                       |
 
 ## Examples
 
@@ -19,10 +19,75 @@ Based on your chosen rules, give an example of a code that follows the code styl
 
 ### Good Example
 
+- Case Style
+
 ```js
+camelCase
+```
+
+- Acronym Case
+
+```js
+Id
+```
+
+- Indentation
+
+```js
+{
+    "Foo": bar
+}
+```
+
+- Indentation Space
+
+```js
+{
+    "foo": "bar"
+}
+```
+
+- Semicolon
+
+```js
+var id;
 ```
 
 ### Bad Example
 
+
+- Case Style
+
 ```js
+not_camel_case
+```
+
+- Acronym Case
+
+```js
+IBM
+```
+
+- Indentation
+
+```js
+{
+  "Foo": bar,
+  "Foo": bar
+}
+```
+
+- Indentation Space
+
+```js
+{
+	"foo": "bar",
+	"foo": "bar"
+}
+```
+
+- Semicolon
+
+```js
+var id
 ```
