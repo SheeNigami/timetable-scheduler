@@ -9,7 +9,7 @@ app.use(urlencodedParser);
 
 var Lectures = require('./models/lectures.js');
 
-app.get('/lectures', (req, res) => {
+app.get('/basic/data', (req, res) => {
     Lectures.getAllLectures().then((allLectures) => {
         res.status(200).send(allLectures);
     }).catch((err) => {
@@ -18,7 +18,7 @@ app.get('/lectures', (req, res) => {
     });
 });
 
-app.post('/lectures', (req, res) => {
+app.post('/basic/data', (req, res) => {
     const cols = ['lectureId', 'facultyId', 'semesterId', 'dayOfWeek', 'startTime', 'endTime'];
     let data = req.body.data;
     if (!(checkInputs(cols, data))) {
