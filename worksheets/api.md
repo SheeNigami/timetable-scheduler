@@ -55,37 +55,93 @@ Each API should include
 
 ```json
 {
-	"error": string,
-	"code": number
+  length: 207,
+  name: 'error',
+  severity: 'ERROR',
+  code: code,
+  detail: details,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'lectures',
+  column: undefined,
+  dataType: undefined,
+  constraint: constraint,
+  file: file,
+  line: line,
+  routine: routine
 }
 ```
 
-### Sample Request
+## Basic Insert API
 
-```http
-GET /basic/data?id=1234567890
-```
+| attribute   | value       |
+| ----------- | ----------- |
+| HTTP Method | POST        |
+| Endpoint    | /basic/data |
 
-### Sample Response
+### Parameters
 
+| parameter | datatype        | example   |
+| --------- | --------------- | --------- |
+| NIL       | NIL             | NIL       |
+
+### Request Body
 ```json
 {
-    "result": [
+    "data": [
         {
-            "id": 1234567890,
-            "property1": 1234567890,
-            "property2": "haha",
-            ...
+            "lectureId": 1234467893,
+            "semesterId": 2234567890,
+            "facultyId": 2234567890,
+            "dayOfWeek": 3,
+            "startTime": "1100",
+            "endTime": "1230"
+        },     
+        {
+            "lectureId": 1234517893,
+            "semesterId": 2234567890,
+            "facultyId": 2234567890,
+            "dayOfWeek": 2,
+            "startTime": "1500",
+            "endTime": "1830"
+        },      
+        {
+            "lectureId": 1234563893,
+            "semesterId": 2234567890,
+            "facultyId": 2234567890,
+            "dayOfWeek": 1,
+            "startTime": "1100",
+            "endTime": "1430"
+        },      
+        {
+            "lectureId": 1234568893,
+            "semesterId": 1234567890,
+            "facultyId": 1234567890,
+            "dayOfWeek": 6,
+            "startTime": "1500",
+            "endTime": "1730"
         }
     ]
 }
 ```
 
-### Sample Error
+### Response Body
 
 ```json
 {
-	"error": "Server Error",
-	"code": 500
+    "results": "success"
+}}
+```
+
+### Error
+
+```json
+{
+    "error": "Key (\"lectureId\")=(4192650317) already exists.",
+    "code": "23505"
 }
 ```
