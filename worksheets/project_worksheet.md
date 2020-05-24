@@ -36,7 +36,7 @@ Link: [Use Case Diagram](https://www.plantuml.com/plantuml/svg/0/RP5D4e8m38NtFKM
 
 The above listed are functional requirements, that is, **WHAT** the system should allow users to do. There are also non-functional requirements that state **HOW** a system should perform.
 
--   Q1. Consider the use case of `Compute basic/advance result`, **HOW** is this functionality made available to both JiBaBoom and Adminstrator _(Hint: They are different)_? ``
+-   Q1. Consider the use case of `Compute basic/advance result`, **HOW** is this functionality made available to both JiBaBoom and Adminstrator _(Hint: They are different)_? `` `The functionality is made available to JiBaBoom from the backend, where the basic/advanced result is computed, however the functionality is only made available to the admin in the frontend result viewer, which displays the information computed (in the backend).`
 -   Q2. Consider the use case of `Insert basic/advance data`. **HOW** is the data stored? `Data is stored in a database in the cloud, via elephantSQL`
 
 ---
