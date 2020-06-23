@@ -18,7 +18,7 @@ app.get('/basic/data', (req, res) => {
     });
 });
 
-app.post('/basic/data', (req, res) => {
+app.post('/basic/insert', (req, res) => {
     const cols = ['lectureId', 'facultyId', 'semesterId', 'dayOfWeek', 'startTime', 'endTime'];
     let data = req.body.data;
     if (!(checkInputs(cols, data))) {
