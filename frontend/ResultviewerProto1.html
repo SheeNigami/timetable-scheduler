@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Timetable</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="index.css">
+
+
+  <style>
+    .timetable {
+      line-height: 0;
+    }
+    table.table-bordered {
+      border: none;
+    }
+    .class-a {
+      background-color: #578092;
+      color: white;
+    }
+    .class-b {
+      background-color: #423352;
+      color: white;
+    }
+    .class-c {
+      background-color: #A7BCB5;
+      color: white;
+    }
+    .class-d {
+      background-color: #F5B065;
+      color: white;
+    }
+    .class-e {
+      background-color: #E88B6C;
+      color: white;
+    }
+    .class-f {
+      background-color: #61B2B4;
+      color: white;
+    }
+    .class-g {
+      background-color: #F6D86A;
+      color: white;
+    }
+    .class-h {
+      background-color: #669ACC;
+      color: white;
+    }
+    .class-i {
+      background-color: #C18F5A;
+      color: white;
+    }
+    .class-j {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .lh-1 {
+      line-height: 1;
+    }
+  </style>
+</head>
+<header>
+    <!-- 
+        7 - Navbar with brand left, links right, toggler right
+        The links collapse into the mobile menu
+    -->
+    
+    <!-- technically the navbar is done to integrate with CA3 and CA4 so it might look awkward now(with only one link)-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark"> <!--nav bar with bootstrap styling-->
+        <a href="index.html" class="navbar-brand font-italic bg-info">JIBABOOM</a> <!--logo of university-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar7">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse justify-content-stretch" id="navbar7"> 
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="ResultviewerProto1.html">RESULT VIEWER</a>  
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <h1 class="text-center font-italic bg-warning">RESULT VIEWER</h1> <!-- DATAviewer text in centre-->
+</header>
+<body>
+  <div class="container">
+    <h2>Input </h2>
+    <form>
+      <div class="form-group row">
+        <div class="col-xs-2">
+          <label for="Input 1">Input 1</label>
+          <input type="Input 1" class="form-control" id="Input 1"  placeholder="Enter Input 1">
+        </div>
+        <div class="col-xs-3">
+          <label for="Input 2">Input 2</label>
+          <input type="Input 2" class="form-control" id="Input 2"  placeholder="Enter Input 2">
+        </div>
+        <div class="col-xs-4">
+          <label for="Input 3">Input 3</label>
+          <input type="Input 3" class="form-control" id="Input 3"  placeholder="Enter Input 3">
+        </div>
+        <br>
+        <div class="pt-4 pl-4">
+          <button type="submit" class="btn btn-primary">Compute</button>
+        </div>
+      </div>
+      
+    </form>
+  </div>
+<hr>
+
+<div class="container">
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Lecture Hall 1</th>
+          <th>Lecture Hall 2</th>
+          <th>Lecture Hall 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div style="padding: 0px;line-height: 1;width:40px">
+              0900<br><br><br><br><br>1000<br><br><br><br><br>1100<br><br><br><br><br>1200<br><br><br><br><br>
+              1300<br><br><br><br><br>1400<br><br><br><br><br>1500<br><br><br><br><br>1600<br><br><br><br><br>
+              1700<br><br><br><br><br>1800
+            </div>
+          </td>
+          <td>
+            <div class="text-center" style="height: 802px;">    
+              <div style="height: 40px"></div><div class="class-d lh-1" style="height: 120px">
+            Calculus 1<br>MS0111<br>09:30-11:00</div><div style="height: 320px"></div><div class="class-c lh-1" style="height: 120px">
+             Calculus 2<br>MS0112<br>15:00-16:30</div>
+            </div>
+          </td> 
+          <td>
+            <div class="text-center" style="height: 802px;">
+              <div style="height: 360px"></div><div class="class-a lh-1" style="height: 200px">
+            Calculus 3<br>MS0113<br>13:30-16:00</div></div>
+          </td>
+          <td>
+            <div class="text-center" style="height: 802px;">
+              <div style="height: 80px"></div><div class="class-c lh-1" style="height: 120px">
+            Calculus 2<br>MS0112<br>10:00-11:30</div><div style="height: 280px"></div><div class="class-b lh-1" style="height: 240px">
+            Intro To Python<br>PY123<br>15:00-18:00</div>    </div>
+          </td>
+            
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>  
+<footer class="mainfooter" role="contentinfo"> <!-- table footer-->
+    <div class="footer-middle">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md col-sm col-xs">
+                    <!--Column1-->
+                    <div class="footer-pad">
+                        <h4>ADDRESS</h4>  <!-- address-->
+                        <ul class="list-unstyled">
+                            <p>JURONG WEST STREET 912 </p>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 copy"> <!-- copyright-->
+                    <p class="text-center">&copy; Copyright 2020 - JIBABOOM.  All rights reserved.</p>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</footer>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</html>
