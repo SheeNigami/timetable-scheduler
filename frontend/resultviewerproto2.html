@@ -7,17 +7,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css"> 
     <link rel="stylesheet" href="index.css">
-    <title>index.html </title>
+    <title>resultviewer.html </title>
     
     
 </head>
 <header>
-    <!-- 
-        7 - Navbar with brand left, links right, toggler right
-        The links collapse into the mobile menu
-    -->
-    
-    <!-- technically the navbar is done to integrate with CA3 and CA4 so it might look awkward now(with only one link)-->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark"> <!--nav bar with bootstrap styling-->
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -36,8 +30,36 @@
             </div>
           </div>
     </nav>
-    <h1 class="text-center font-italic bg-warning">DATA VIEWER</h1> <!-- DATAviewer text in centre-->
+    <h1 class="text-center font-italic bg-warning">RESULT VIEWER</h1> <!-- DATAviewer text in centre-->
 </header>
+<div class="container">
+    <h2>Input </h2>
+    <form>
+      <div class="form-group row">
+        <div class="col-xs-2 pl-3 pr-4">
+          <label for="Input 1 ">Input 1</label>
+          <input type="Input 1" class="form-control" id="Input 1"  placeholder="Enter Input 1">
+        </div>
+        <div class="col-xs-3 pl-3 pr-4">
+          <label for="Input 2 ">Input 2</label>
+          <input type="Input 2" class="form-control" id="Input 2"  placeholder="Enter Input 2">
+        </div>
+        <div class="col-xs-4 pl-3 pr-4">
+          <label for="Input 3">Input 3</label>
+          <input type="Input 3" class="form-control" id="Input 3"  placeholder="Enter Input 3">
+        </div>
+        <div class="col-xs-4 pl-3 pr-4">
+            <label for="Input 4">Input 4</label>
+            <input type="Input 4" class="form-control" id="Input 4"  placeholder="Enter Input 4">
+          </div>
+        <br>
+        <div class="pt-4 mt-2 pl-4">
+          <button type="submit" class="btn btn-warning">Compute</button>
+        </div>
+      </div>
+      
+    </form>
+  </div>
 
 <body class="col-lg-12 col-md col-sm col-xs responsive" > <!--background image-->
     <div class="container mb-5 mt-3 table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm	" >  <!-- container-->
@@ -45,9 +67,6 @@
             <thead>
                 <tr>
                     <th>lectureId</th>  <!-- attribute name-->
-                    <th>factultyId</th> <!-- attribute name-->
-                    <th>semesterId</th> <!-- attribute name-->
-                    <th>dayOfWeek</th> <!-- attribute name-->
                     <th>startTime</th> <!-- attribute name-->
                     <th>endTime</th> <!-- attribute name-->
                 </tr>
@@ -59,14 +78,12 @@
                 <!-- table footer implemented cuz sometimes data is too long then very hard to see which attributes for which row -->
                 <tr>
                     <th>lectureId</th>
-                    <th>factultyId</th>
-                    <th>semesterId</th>
-                    <th>dayOfWeek</th>
                     <th>startTime</th>
                     <th>endTime</th>
                 </tr>
             </tfoot>
         </table> 
+        
         <footer class="mainfooter" role="contentinfo"> <!-- table footer-->
             <div class="footer-middle">
                 <div class="container">
@@ -103,12 +120,14 @@
     <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
+
         $(".mydatatable").DataTable({
+            searching: false,
+            paging:false,
             order: [[3, 'asc']],  
-            pagingType: 'full_numbers', 
             lengthMenu: [[5,10,25,50,-1],[5,10,25,50,"All"]],
             "ajax": {
-                url: "http://localhost:3000/basic/data",
+                url: "http://localhost:3000/basic/da    ta",
                 dataSrc: ""
             },
             "columns": [
@@ -118,32 +137,8 @@
                 {"data": "dayOfWeek"},
                 {"data": "startTime"},
                 {"data": "endTime"}
-            ],
-            initComplete: function () {
-                this.api().columns([1,2]).every( function () {
-                    var column = this;
-                    var select = $('<select><option value="">Show All</option></select>')
-                        .appendTo( $(column.footer()).empty() )
-                        .on( 'change', function () {
-                            var val = $.fn.dataTable.util.escapeRegex(
-                                $(this).val()
-                            );
-    
-                            column
-                                .search( val ? '^'+val+'$' : '', true, false )
-                                .draw();
-                        } );
-    
-                    column.data().unique().sort().each( function ( d, j ) {
-                        var val = $.fn.dataTable.util.escapeRegex(d);
-                        if (column.search() === "^" + val + "$") {
-                            select.append('<option value="' + d + '" selected="selected">' + d + "</option>");
-                        } else {
-                            select.append('<option value="' + d + '">' + d + "</option>");
-                        }
-                    } );
-                } );
-            }
+            ]
+
         });
     </script>
 </body>
