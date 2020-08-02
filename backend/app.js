@@ -39,6 +39,16 @@ app.post('/basic/insert', (req, res) => {
     }
 }); 
 
+// Get all advance data
+app.get('/advance/data', (req, res) => {
+    Technicians.getAllTechnicians().then((allTechnicians) => {
+        res.status(200).send(allTechnicians);
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).send(err);
+    });
+});
+
 // Bulk insert for advanced
 app.post('/advance/insert', (req, res) => {
     const cols = ['technicianId', 'semesterId', 'facultyId', 'dayOfWeek', 'startTime', 'endTime'];
@@ -47,7 +57,7 @@ app.post('/advance/insert', (req, res) => {
     if (!(checkInputs(cols, data))) {
         res.status(500).send({"error": "Invalid input(s)", "code": 1});
     } else {
-        Lectures.insertLectures(data).then(() => {
+        Technicians.insertTechnicians(data).then(() => {
             res.status(201).send({'results': 'success'});
         }).catch((err) => {
             console.log(err);
