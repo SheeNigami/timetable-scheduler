@@ -78,7 +78,7 @@ app.get('/advance/data', (req, res) => {
     Technicians.getAllTechnicians().then((allTechnicians) => {
         res.status(200).send(allTechnicians);
     }).catch((err) => {
-        res.status(500).send(err);
+        res.status(500).send({"error": "There was a server error!", 'code': err.code});
     });
 });
 
