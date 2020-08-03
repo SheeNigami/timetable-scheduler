@@ -18,7 +18,7 @@ app.get('/basic/data', (req, res) => {
         res.status(200).send(allLectures);
     }).catch((err) => {
         console.log(err);
-        res.status(500).send(err);
+        res.status(500).send({"error": "There was a server error!", 'code': err.code});
     });
 });
 
@@ -38,6 +38,53 @@ app.post('/basic/insert', (req, res) => {
         });
     }
 }); 
+
+// Get result for basic
+app.get('/basic/result', (req, res) => {
+    let facultyId = req.query.facultyId
+    let semesterId = req.query.semesterId
+    let dayOfWeek = req.query.dayOfWeek
+
+    // If any are undefined/null
+    if (!facultyId || ! semesterId || ! dayOfWeek) {
+        res.status(500).send({"error": "Required params not present (All facultyId, semesterId, dayOfWeek", "code": 11});
+    }
+
+    Lectures.getDaysLectures(facultyId, semesterId, dayOfWeek).then((dayLectures) => {
+        res.status(200).send(basicAlgo(dayLectures));
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).send({"error": "There was an error with getting the day's lectures", 'code': err.code});
+    });
+})
+
+function basicAlgo(lectures) {
+    let ans = {"result": []};
+    for (const lecture of lectures) {
+        if (ans.result.length == 0) {
+            ans.result.append([lecutre]);
+        } else {
+            ans = checkHallAvailability(ans, lecture);
+        }
+    }
+    return ans;
+}
+
+function checkHallAvailability(ans, lecture) {
+    // For all current halls
+    for (let i=0; i<ans.result.length; i++) {
+        let currentStart = parseInt(lecture.startTime);
+        let currentEnd = parseInt(lecture.endTime);
+        // For each lecture in the current hall
+        for (const indvLect of ans.result[i]) {
+            // Check if current lectures overlap with any lecture in current hall
+            if (!(currentEnd < parseInt(indvLect.startTime) || currentStart > parseInt(indvLect.endTime))) {
+                return ans.result.append([lecture]);
+            }
+        }
+        return ans.result[i].append(lecture);
+    }
+}
 
 // Get all advance data
 app.get('/advance/data', (req, res) => {
@@ -64,6 +111,12 @@ app.post('/advance/insert', (req, res) => {
             res.status(500).send({"error": err.detail, 'code': err.code});
         });
     }
+})
+
+// Get result for advanced
+app.get('/advance/result', (req, res) => {
+    console.log(req.query);
+
 })
 
 // Input validation for basic insert
