@@ -14,6 +14,21 @@ app.use(urlencodedParser);
 var Lectures = require('./models/lectures.js');
 var Technicians = require('./models/technicians.js')
 
+// Reset database
+app.get('/reset', (req, res) => {
+    Lectures.deleteLectures().then(() => {
+        Technicians.deleteTechnicians().then(() => {
+            res.status(200).send({"results": "success"});
+        }).catch((err) => {
+            console.log(err);
+            res.status(500).send({"error": "There was a server error!", 'code': err.code});
+        })
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).send({"error": "There was a server error!", 'code': err.code});
+    })
+})
+
 // Get all basic data
 app.get('/basic/data', (req, res) => {
     Lectures.getAllLectures().then((allLectures) => {

@@ -15,6 +15,9 @@ const Lectures = {
     insertLectures: function(data) { 
         const query = pgp.helpers.insert(data, cs);
         return db.none(query);
+    },
+    deleteLectures: function() {
+        return db.any('DELETE FROM Lectures');
     }
 };
 

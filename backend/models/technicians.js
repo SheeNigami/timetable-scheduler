@@ -12,6 +12,9 @@ const Technicians = {
     insertTechnicians: function(data) { 
         const query = pgp.helpers.insert(data, cs);
         return db.none(query);
+    },
+    deleteTechnicians: function() {
+        return db.any('DELETE FROM Technicians');
     }
 };
 
