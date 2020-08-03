@@ -59,30 +59,30 @@ app.get('/basic/result', (req, res) => {
 })
 
 function basicAlgo(lectures) {
-    let ans = {"result": []};
+    let ans = []
     for (const lecture of lectures) {
-        if (ans.result.length == 0) {
-            ans.result.append([lecutre]);
+        if (ans.length == 0) {
+            ans.push([lecture]);
         } else {
             ans = checkHallAvailability(ans, lecture);
         }
     }
-    return ans;
+    return {"result": ans};
 }
 
 function checkHallAvailability(ans, lecture) {
     // For all current halls
-    for (let i=0; i<ans.result.length; i++) {
+    for (let i=0; i<ans.length; i++) {
         let currentStart = parseInt(lecture.startTime);
         let currentEnd = parseInt(lecture.endTime);
         // For each lecture in the current hall
-        for (const indvLect of ans.result[i]) {
+        for (const indvLect of ans[i]) {
             // Check if current lectures overlap with any lecture in current hall
             if (!(currentEnd < parseInt(indvLect.startTime) || currentStart > parseInt(indvLect.endTime))) {
-                return ans.result.append([lecture]);
+                return ans.push([lecture]);
             }
         }
-        return ans.result[i].append(lecture);
+        return ans[i].push(lecture);
     }
 }
 
