@@ -94,16 +94,23 @@ function basicAlgo(lectures) {
 function checkHallAvailability(ans, lecture) {
     // For all current halls
     for (let i=0; i<ans.length; i++) {
-        let currentStart = parseInt(lecture.startTime);
-        let currentEnd = parseInt(lecture.endTime);
-        // For each lecture in the current hall
-        for (const indvLect of ans[i]) {
-            // Check if current lectures overlap with any lecture in current hall
-            if (!(currentEnd < parseInt(indvLect.startTime) || currentStart > parseInt(indvLect.endTime))) {
-                return ans.push([lecture]);
-            }
+        if (!checkOverlap(lecture, ans[i])) {
+            ans[i].push(lecture)
+            return ans;
         }
-        return ans[i].push(lecture);
+    }
+    ans.push([lecture]);
+    return ans;
+}
+
+function checkOverlap(lecture, hall) {
+    let currentStart = parseInt(lecture.startTime);
+    let currentEnd = parseInt(lecture.endTime);
+    // For each lecture in the current hall
+    for (const indvLect of hall) {
+        if (!(currentEnd < parseInt(indvLect.startTime) || currentStart > parseInt(indvLect.endTime))) {
+            return true;
+        }
     }
 }
 
