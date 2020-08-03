@@ -1,6 +1,8 @@
 // Libraries
 var express = require('express');
+var cors = require('cors');
 var app = express();
+app.use(cors());
 app.use(express.static('../frontend', {index: 'index.html'}));
 
 var bodyParser = require('body-parser');
@@ -61,6 +63,10 @@ app.get('/basic/result', (req, res) => {
 function basicAlgo(lectures) {
     let ans = []
     for (const lecture of lectures) {
+        lecture.lectureId = parseInt(lecture.lectureId);
+        lecture.facultyId = parseInt(lecture.facultyId);
+        lecture.semesterId = parseInt(lecture.semesterId);
+        lecture.dayOfWeek = parseInt(lecture.dayOfWeek);
         if (ans.length == 0) {
             ans.push([lecture]);
         } else {
