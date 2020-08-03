@@ -14,17 +14,18 @@ app.use(urlencodedParser);
 var Lectures = require('./models/lectures.js');
 var Technicians = require('./models/technicians.js')
 
+// Algorithms
+var Algos = require('./algo.js');
+
 // Reset database
 app.get('/reset', (req, res) => {
     Lectures.deleteLectures().then(() => {
         Technicians.deleteTechnicians().then(() => {
             res.status(200).send({"results": "success"});
         }).catch((err) => {
-            console.log(err);
             res.status(500).send({"error": "There was a server error!", 'code': err.code});
         })
     }).catch((err) => {
-        console.log(err);
         res.status(500).send({"error": "There was a server error!", 'code': err.code});
     })
 })
@@ -34,7 +35,6 @@ app.get('/basic/data', (req, res) => {
     Lectures.getAllLectures().then((allLectures) => {
         res.status(200).send(allLectures);
     }).catch((err) => {
-        console.log(err);
         res.status(500).send({"error": "There was a server error!", 'code': err.code});
     });
 });
@@ -50,7 +50,6 @@ app.post('/basic/insert', (req, res) => {
         Lectures.insertLectures(data).then(() => {
             res.status(201).send({'results': 'success'});
         }).catch((err) => {
-            console.log(err);
             res.status(500).send({"error": err.detail, 'code': err.code});
         });
     }
@@ -68,58 +67,17 @@ app.get('/basic/result', (req, res) => {
     }
 
     Lectures.getDaysLectures(facultyId, semesterId, dayOfWeek).then((dayLectures) => {
-        res.status(200).send(basicAlgo(dayLectures));
+        res.status(200).send(Algos.basicAlgo(dayLectures));
     }).catch((err) => {
-        console.log(err);
         res.status(500).send({"error": "There was an error with getting the day's lectures", 'code': err.code});
     });
 })
-
-function basicAlgo(lectures) {
-    let ans = []
-    for (const lecture of lectures) {
-        lecture.lectureId = parseInt(lecture.lectureId);
-        lecture.facultyId = parseInt(lecture.facultyId);
-        lecture.semesterId = parseInt(lecture.semesterId);
-        lecture.dayOfWeek = parseInt(lecture.dayOfWeek);
-        if (ans.length == 0) {
-            ans.push([lecture]);
-        } else {
-            ans = checkHallAvailability(ans, lecture);
-        }
-    }
-    return {"result": ans};
-}
-
-function checkHallAvailability(ans, lecture) {
-    // For all current halls
-    for (let i=0; i<ans.length; i++) {
-        if (!checkOverlap(lecture, ans[i])) {
-            ans[i].push(lecture)
-            return ans;
-        }
-    }
-    ans.push([lecture]);
-    return ans;
-}
-
-function checkOverlap(lecture, hall) {
-    let currentStart = parseInt(lecture.startTime);
-    let currentEnd = parseInt(lecture.endTime);
-    // For each lecture in the current hall
-    for (const indvLect of hall) {
-        if (!(currentEnd < parseInt(indvLect.startTime) || currentStart > parseInt(indvLect.endTime))) {
-            return true;
-        }
-    }
-}
 
 // Get all advance data
 app.get('/advance/data', (req, res) => {
     Technicians.getAllTechnicians().then((allTechnicians) => {
         res.status(200).send(allTechnicians);
     }).catch((err) => {
-        console.log(err);
         res.status(500).send(err);
     });
 });
@@ -135,7 +93,6 @@ app.post('/advance/insert', (req, res) => {
         Technicians.insertTechnicians(data).then(() => {
             res.status(201).send({'results': 'success'});
         }).catch((err) => {
-            console.log(err);
             res.status(500).send({"error": err.detail, 'code': err.code});
         });
     }
@@ -143,11 +100,10 @@ app.post('/advance/insert', (req, res) => {
 
 // Get result for advanced
 app.get('/advance/result', (req, res) => {
-    console.log(req.query);
 
 })
 
-// Input validation for basic insert
+// Input validation for bulk inserts
 function checkInputs(cols, data) {
     // Check is no data/empty data
     if (typeof(data) == 'undefined' || data == [] || data == {}) {
@@ -160,19 +116,16 @@ function checkInputs(cols, data) {
             }
             if (col == 'lectureId' || col == 'technicianId' || col == 'facultyId' || col == 'semesterId') {
                 if(!(checkTenDigitId(row[col]))) {
-                    console.log(row[col]);
                     return false;
                 }            
             }
             if (col == 'dayOfWeek') {
                 if (!(checkDayOfWeek(row[col]))) {
-                    console.log(row[col]);
                     return false;
                 }
             }
             if (col == 'startTime' || col == 'endTime') {
                 if (!(checkTime(row[col]))) {
-                    console.log(row[col]);
                     return false;
                 }
             }
