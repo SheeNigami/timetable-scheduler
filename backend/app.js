@@ -9,6 +9,18 @@ app.use(urlencodedParser);
 
 var Lectures = require('./models/lectures.js');
 
+app.get('/', (req, res) => {
+    return res.json({
+        message: "Welcome to JiBaBoom - TeamTeam",
+        availableEndpoints: [
+             'POST /basic/insert { "data": [ {key1: value1, key2: value2, ...} ] }',
+            //  'POST /advance/insert { "data": [ {key1: value1, key2: value2, ...} ] }',
+             'GET /basic/result?para1=value1&para2=value2',
+            //  'GET /advance/result?para1=value1&para2=value2',
+        ]
+    });
+});
+
 app.get('/basic/data', (req, res) => {
     Lectures.getAllLectures().then((allLectures) => {
         res.status(200).send(allLectures);
