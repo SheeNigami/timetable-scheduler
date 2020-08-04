@@ -69,6 +69,7 @@ app.get('/basic/result', (req, res) => {
     Lectures.getDaysLectures(facultyId, semesterId, dayOfWeek).then((dayLectures) => {
         res.status(200).send(Algos.basicAlgo(dayLectures));
     }).catch((err) => {
+        console.log(err);
         res.status(500).send({"error": "There was an error with getting the day's lectures", 'code': err.code});
     });
 })

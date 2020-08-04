@@ -3,10 +3,6 @@
 function basicAlgo(lectures) {
     let ans = []
     for (const lecture of lectures) {
-        lecture.lectureId = parseInt(lecture.lectureId);
-        lecture.facultyId = parseInt(lecture.facultyId);
-        lecture.semesterId = parseInt(lecture.semesterId);
-        lecture.dayOfWeek = parseInt(lecture.dayOfWeek);
         if (ans.length == 0) {
             ans.push([lecture]);
         } else {
