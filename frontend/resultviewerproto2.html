@@ -122,12 +122,8 @@
         var Table = $(".mydatatable").DataTable({
             searching: false,
             paging:false,
-            // order: [[1, 'asc']],  
+            order: [[0, 'asc']],  
             lengthMenu: [[5,10,25,50,-1],[5,10,25,50,"All"]],
-            // "ajax": {
-            //     url: "http://localhost:3000/basic/result",
-            //     dataSrc: ""
-            // },
             "columns": [
                 {"data": "hallNo"},
                 {"data": "lectureId"},
@@ -145,13 +141,14 @@
                 type: "get",
             }).done(function (result) {
                 Table.clear().draw();
-                for (let i=0; i<result.length; i++) {
-                    for (let j=0; j<result[i].length; i++) {
-                        result[i][j].hallNo = i;
+                let toAdd = [];
+                for (let i=0; i<result.result.length; i++) {
+                    for (let j=0; j<result.result[i].length; j++) {
+                        result.result[i][j].hallNo = i+1;
+                        toAdd.push(result.result[i][j]) 
                     }
                 }
-                console.log(result);
-                Table.rows.add(result).draw();
+                Table.rows.add(toAdd).draw();
             }).fail(function (jqXHR, textStatus, errorThrown) {
                 // needs to implement if it fails
                 window.alert('Invalid Inputs, please try again!')
