@@ -18,17 +18,12 @@
               JIBABOOM
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="index.html">DATA VIEWER</a>
+              <a class="dropdown-item" href="index.html">BASIC DATA VIEWER</a>
               <a class="dropdown-item" href="advancedataviewerproto1.html">ADVANCE DATA VIEWER</a>
-              <a class="dropdown-item" href="resultviewerproto2.html">RESULT VIEWER</a>
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                ADVANCE RESULT VIEWER
-              </button>              
-              <a class="dropdown-item" href="advresultviewer.html">ADVANCE RESULT VIEWER </a>
-              <a class="dropdown-item" href="advresultviewerp1.html">ADVANCE RESULT VIEWER 1</a>
-              <a class="dropdown-item" href="advresultviewer2.html">ADVANCE RESULT VIEWER 2</a>
+              <a class="dropdown-item" href="resultviewerproto2.html">BASIC RESULT VIEWER</a>
+              <a class="dropdown-item" href="advresultviewerp1.html">ADVANCE RESULT VIEWER</a>
             </div>
-          </div>
+        </div>
     </nav>
     <h1 class="text-center font-italic bg-warning">ADVANCE DATA VIEWER</h1> <!-- DATAviewer text in centre-->
 </header>
@@ -102,11 +97,11 @@
             pagingType: 'full_numbers', 
             lengthMenu: [[5,10,25,50,-1],[5,10,25,50,"All"]],
             "ajax": {
-                url: "http://localhost:3000/basic/data",
+                url: "http://localhost:3000/advance/data",
                 dataSrc: ""
             },
             "columns": [
-                {"data": "lectureId"},
+                {"data": "technicianId"},
                 {"data": "facultyId"},
                 {"data": "semesterId"},
                 {"data": "dayOfWeek"},
@@ -114,7 +109,7 @@
                 {"data": "endTime"}
             ],
             initComplete: function () {
-                this.api().columns([1,2]).every( function () {
+                this.api().columns([1,2,3]).every( function () {
                     var column = this;
                     var select = $('<select><option value="">Show All</option></select>')
                         .appendTo( $(column.footer()).empty() )
