@@ -45,6 +45,7 @@ Each API should include
 }
 ```
 
+
 ## Get All Data (Lectures)
 
 | attribute   | value       |
@@ -90,6 +91,7 @@ Each API should include
 }
 ```
 
+
 ## Basic Insert API
 
 | attribute   | value         |
@@ -122,22 +124,6 @@ Each API should include
             "dayOfWeek": 2,
             "startTime": "1500",
             "endTime": "1830"
-        },      
-        {
-            "lectureId": 1234563893,
-            "semesterId": 2234567890,
-            "facultyId": 2234567890,
-            "dayOfWeek": 1,
-            "startTime": "1100",
-            "endTime": "1430"
-        },      
-        {
-            "lectureId": 1234568893,
-            "semesterId": 1234567890,
-            "facultyId": 1234567890,
-            "dayOfWeek": 6,
-            "startTime": "1500",
-            "endTime": "1730"
         }
     ]
 }
@@ -159,6 +145,52 @@ Each API should include
     "code": "23505"
 }
 ```
+
+## Get Basic Result
+
+| attribute   | value         |
+| ----------- | -----------   |
+| HTTP Method | GET           |
+| Endpoint    | /basic/result |
+
+### Parameters
+
+| parameter | datatype        | example    |
+| --------- | --------------- | ---------  |
+| facultyId | int             | 1100000000 |
+
+### Response Body
+
+```json
+{
+    "result": [
+        [
+            {
+                "lectureId": "1000000001",
+                "startTime": "1000",
+                "endTime": "1100"
+            }
+        ],
+        [
+            {
+                "lectureId": "1000000002",
+                "startTime": "1030",
+                "endTime": "1130"
+            }
+        ]
+    ]
+}
+```
+
+### Error
+
+```json
+{
+    "error": "There was an error with getting the day's lectures",
+    "code" : code
+}
+```
+
 
 ## Get All Data (Technicians)
 
@@ -204,6 +236,7 @@ Each API should include
     "code" : code
 }
 ```
+
 
 ## Advance Insert API
 
@@ -266,4 +299,3 @@ Each API should include
     "code": "23505"
 }
 ```
-

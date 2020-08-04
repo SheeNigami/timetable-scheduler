@@ -62,7 +62,7 @@ app.get('/basic/result', (req, res) => {
     let dayOfWeek = req.query.dayOfWeek
 
     // If any are undefined/null
-    if (!facultyId || ! semesterId || ! dayOfWeek) {
+    if (!facultyId || ! semesterId || !dayOfWeek) {
         res.status(500).send({"error": "Required params not present (All facultyId, semesterId, dayOfWeek", "code": 11});
     }
 
