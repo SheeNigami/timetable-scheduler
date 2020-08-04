@@ -50,7 +50,7 @@
             </div>
             <br>
             <div class="pt-4 mt-2 pl-4">
-                <button type="submit" class="btn btn-warning" id='compute'>Compute</button>
+                <button type="button" class="btn btn-warning" id='compute'>Compute</button>
             </div>
         </div>
         
@@ -62,7 +62,7 @@
         <table class="table table-striped table-bordered mydatatable table-light " style="width: 100%"> <!-- stripped table-->
             <thead>
                 <tr>
-                    <!-- <th>Hall No.</th>   -->
+                    <th>Hall No.</th>  
                     <th>lectureId</th>  <!-- attribute name-->
                     <th>startTime</th> <!-- attribute name-->
                     <th>endTime</th> <!-- attribute name-->
@@ -74,7 +74,7 @@
             <tfoot> 
                 <!-- table footer implemented cuz sometimes data is too long then very hard to see which attributes for which row -->
                 <tr>
-                    <!-- <th>Hall No.</th>  -->
+                    <th>Hall No.</th> 
                     <th>lectureId</th>
                     <th>startTime</th>
                     <th>endTime</th>
@@ -122,29 +122,39 @@
         var Table = $(".mydatatable").DataTable({
             searching: false,
             paging:false,
-            order: [[3, 'asc']],  
+            // order: [[1, 'asc']],  
             lengthMenu: [[5,10,25,50,-1],[5,10,25,50,"All"]],
+            // "ajax": {
+            //     url: "http://localhost:3000/basic/result",
+            //     dataSrc: ""
+            // },
             "columns": [
+                {"data": "hallNo"},
                 {"data": "lectureId"},
                 {"data": "startTime"},
                 {"data": "endTime"}
-            ],
-            rowCallback: function (row, data) {},
+            ]
         });
         
-        var facultyId = $('#facultyId').val();
-        var semesterId = $('#semesterId').val();
-        var dayOfWeek = $('#dayOfWeek').val();
         $("#compute").on("click", function (event) {
+            var facultyId = $('#facultyId').val();
+            var semesterId = $('#semesterId').val();
+            var dayOfWeek = $('#dayOfWeek').val();
             $.ajax({
                 url: "http://localhost:3000/basic/result?facultyId=" + facultyId + "&semesterId=" + semesterId + "&dayOfWeek=" + dayOfWeek,
                 type: "get",
             }).done(function (result) {
                 Table.clear().draw();
+                for (let i=0; i<result.length; i++) {
+                    for (let j=0; j<result[i].length; i++) {
+                        result[i][j].hallNo = i;
+                    }
+                }
                 console.log(result);
                 Table.rows.add(result).draw();
             }).fail(function (jqXHR, textStatus, errorThrown) {
                 // needs to implement if it fails
+                window.alert('Invalid Inputs, please try again!')
             });
         })
     </script>
