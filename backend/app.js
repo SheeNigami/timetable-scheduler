@@ -12,7 +12,7 @@ app.use(urlencodedParser);
 
 // Models
 var Lectures = require('./models/lectures.js');
-var Technicians = require('./models/technicians.js')
+var Technicians = require('./models/technicians.js');
 
 // Algorithms
 var Algos = require('./algo.js');
@@ -28,7 +28,7 @@ app.get('/reset', (req, res) => {
     }).catch((err) => {
         res.status(500).send({"error": "There was a server error!", 'code': err.code});
     })
-})
+});
 
 // Get all basic data
 app.get('/basic/data', (req, res) => {
@@ -71,7 +71,7 @@ app.get('/basic/result', (req, res) => {
     }).catch((err) => {
         res.status(500).send({"error": "There was an error with getting the day's lectures", 'code': err.code});
     });
-})
+});
 
 // Get all advance data
 app.get('/advance/data', (req, res) => {
@@ -96,12 +96,12 @@ app.post('/advance/insert', (req, res) => {
             res.status(500).send({"error": err.detail, 'code': err.code});
         });
     }
-})
+});
 
 // Get result for advanced
 app.get('/advance/result', (req, res) => {
-
-})
+    
+});
 
 // Input validation for bulk inserts
 function checkInputs(cols, data) {
