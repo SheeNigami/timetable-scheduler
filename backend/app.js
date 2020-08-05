@@ -57,9 +57,9 @@ app.post('/basic/insert', (req, res) => {
 
 // Get result for basic
 app.get('/basic/result', (req, res) => {
-    let facultyId = req.query.facultyId
-    let semesterId = req.query.semesterId
-    let dayOfWeek = req.query.dayOfWeek
+    let facultyId = req.query.facultyId;
+    let semesterId = req.query.semesterId;
+    let dayOfWeek = req.query.dayOfWeek;
 
     // If any are undefined/null
     if (!facultyId || ! semesterId || !dayOfWeek) {
@@ -69,7 +69,7 @@ app.get('/basic/result', (req, res) => {
     Lectures.getDaysLectures(facultyId, semesterId, dayOfWeek).then((dayLectures) => {
         res.status(200).send(Algos.basicAlgo(dayLectures));
     }).catch((err) => {
-        res.status(500).send({"error": "There was an error with getting the day's lectures", 'code': err.code});
+        res.status(500).send({"error": "There was an error with getting the day's lectures", "code": err.code});
     });
 });
 

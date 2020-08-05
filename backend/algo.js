@@ -2,7 +2,9 @@
 
 function basicAlgo(lectures) {
     let ans = []
+    lectures = lectures.sort(function(a, b){return a.startTime - b.startTime});
     for (const lecture of lectures) {
+        lecture.lectureId = parseInt(lecture.lectureId);
         if (ans.length == 0) {
             ans.push([lecture]);
         } else {
@@ -25,11 +27,11 @@ function checkHallAvailability(ans, lecture) {
 }
 
 function checkOverlap(lecture, hall) {
-    let currentStart = parseInt(lecture.startTime);
-    let currentEnd = parseInt(lecture.endTime);
+    let currentStart = lecture.startTime;
+    let currentEnd = lecture.endTime;
     // For each lecture in the current hall
     for (const indvLect of hall) {
-        if (!(currentEnd < parseInt(indvLect.startTime) || currentStart > parseInt(indvLect.endTime))) {
+        if (!(currentEnd < indvLect.startTime || currentStart > indvLect.endTime)) {
             return true;
         }
     }
