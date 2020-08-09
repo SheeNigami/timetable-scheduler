@@ -100,7 +100,24 @@ app.post('/advance/insert', (req, res) => {
 
 // Get result for advanced
 app.get('/advance/result', (req, res) => {
-    
+    let facultyId = req.query.facultyId;
+    let semesterId = req.query.semesterId;
+    let dayOfWeek = req.query.dayOfWeek;
+
+    // If any are undefined/null
+    if (!facultyId || ! semesterId || !dayOfWeek) {
+        res.status(500).send({"error": "Required params not present (All facultyId, semesterId, dayOfWeek", "code": 11});
+    }
+
+    Lectures.getDaysLectures(facultyId, semesterId, dayOfWeek).then((dayLectures) => {
+        Technicians.getDaysTechnicians(facultyId, semesterId, dayOfWeek).then((dayTechnicians) => {
+            res.status(500).send(Algos.advancedAlgo(dayLectures, dayTechnicians));
+        }).catch((error) => {
+            res.status(500).send({"error": "There was an error with getting the day's technicians", "code": error.code});
+        });
+    }).catch((err) => {
+        res.status(500).send({"error": "There was an error with getting the day's lectures", "code": err.code});
+    });
 });
 
 // Input validation for bulk inserts

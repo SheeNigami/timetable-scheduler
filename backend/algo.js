@@ -38,7 +38,7 @@ function checkOverlap(lecture, hall) {
 }
 
 // Advanced Algorithm
-function advancedAlgo() {
+function advancedAlgo(lectures, technicians) {
 
 }
 
