@@ -57,7 +57,7 @@
                 <tr>
                     <th>startTime</th> <!-- attribute name-->
                     <th>endTime</th> <!-- attribute name-->
-                    <th>Lack(-)/Surplus(+)</th>  <!-- attribute name-->
+                    <th>Lack(-) / Surplus(+)</th>  <!-- attribute name-->
                 </tr>
             </thead>
             <tbody>
@@ -123,8 +123,9 @@
                 url: "http://localhost:3000/advance/result?facultyId=" + facultyId + "&semesterId=" + semesterId + "&dayOfWeek=" + dayOfWeek,
                 type: "get",
             }).done(function (result) {
+                console.log(result);
                 Table.clear().draw();
-                Table.rows.add(result).draw();
+                Table.rows.add(result.result).draw();
             }).fail(function (jqXHR, textStatus, errorThrown) {
                 // needs to implement if it fails
                 window.alert('Invalid Inputs, please try again!')

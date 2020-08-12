@@ -111,7 +111,7 @@ app.get('/advance/result', (req, res) => {
 
     Lectures.getDaysLectures(facultyId, semesterId, dayOfWeek).then((dayLectures) => {
         Technicians.getDaysTechnicians(facultyId, semesterId, dayOfWeek).then((dayTechnicians) => {
-            res.status(500).send(Algos.advancedAlgo(dayLectures, dayTechnicians));
+            res.status(200).send(Algos.advancedAlgo(dayLectures, dayTechnicians));
         }).catch((error) => {
             res.status(500).send({"error": "There was an error with getting the day's technicians", "code": error.code});
         });
