@@ -39,7 +39,45 @@ function checkOverlap(lecture, hall) {
 
 // Advanced Algorithm
 function advancedAlgo(lectures, technicians) {
+    let sortedAllTimes = sortAllTimes(lectures, technicians);
+    let result = {"result": []}
+    for (let i=0; i < sortedAllTimes.length - 1; i++) {
+        let intvStart = sortedAllTimes[i];
+        let intvEnd = sortedAllTimes[i+1];
 
+        let score = 0;
+        // check lectures
+        for (const lecture of lectures) {
+            if (intvStart >= lecture.startTime && intvEnd <= lecture.endTime) {
+                score--;
+            }
+        }
+        // check technicians
+        for (const technician of technicians) {
+            if (intvStart >= technician.startTime && intvEnd <= technician.endTime) {
+                score++;
+            }
+        }
+        result.result.push({"surplus": score, "startTime": intvStart, "endTime": intvEnd});
+    }
+    return result;
+}
+
+function sortAllTimes(lectures, technicians) {
+    let allTimes = []
+    for (const lecture of lectures) {
+        allTimes.push(lecture.startTime);
+        allTimes.push(lecture.endTime);
+    }
+    for (const technician of technicians) {
+        allTimes.push(technician.startTime);
+        allTimes.push(technician.endTime);
+    }
+    // Sort and remove duplicates
+    allTimes = allTimes.sort().filter(function(item, pos, ary) {
+        return !pos || item != ary[pos - 1];
+    });
+    return allTimes;
 }
 
 module.exports = {basicAlgo, advancedAlgo}

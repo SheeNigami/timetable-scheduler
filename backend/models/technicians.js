@@ -10,7 +10,7 @@ const Technicians = {
         return db.any('SELECT * FROM technicians')
     },
     getDaysTechnicians: function(facultyId, semesterId, dayOfWeek) {
-        return db.any('SELECT "lectureId", "startTime", "endTime" FROM Technicians WHERE "facultyId" = $1 AND "semesterId" = $2 AND "dayOfWeek" = $3', [facultyId, semesterId, dayOfWeek]);
+        return db.any('SELECT "technicianId", "startTime", "endTime" FROM Technicians WHERE "facultyId" = $1 AND "semesterId" = $2 AND "dayOfWeek" = $3', [facultyId, semesterId, dayOfWeek]);
     },
     insertTechnicians: function(data) { 
         const query = pgp.helpers.insert(data, cs);
