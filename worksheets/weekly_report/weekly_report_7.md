@@ -4,18 +4,12 @@ This report is for you to document the progres of your project. You should also 
 
 ## What have I done last week
 
--   Worked on...
--   Worked on...
--   Changed....
+- Made the Basic Frontend templates for the 3 other pages with filler data
 
 ## What do I plan to do next week
 
--   Worked on...
--   Worked on...
--   Changed....
+- Create the new table required along with the documentations
 
 ## Additional Thoughts
 
--   VSCode is sick.
--   This addon is fabulous.
--   Lecturer is awesome.
+- HTML/Javascript is still the simplest

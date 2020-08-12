@@ -4,18 +4,13 @@ This report is for you to document the progres of your project. You should also 
 
 ## What have I done last week
 
--   Worked on...
--   Worked on...
--   Changed....
+- Finished the basic algorithm along with the basic result endpoint.
+- Tested the algorithm/endpoint using the backend test runner, all tests were passed!
 
 ## What do I plan to do next week
 
--   Worked on...
--   Worked on...
--   Changed....
+- Integrate the get basic result endpoint to the frontend
 
 ## Additional Thoughts
 
--   VSCode is sick.
--   This addon is fabulous.
--   Lecturer is awesome.
+- Thinking and drafting up algorithms (and eventually coding them) is an extremely cool and rewarding process.kj

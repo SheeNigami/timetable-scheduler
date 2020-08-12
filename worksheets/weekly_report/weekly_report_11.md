@@ -4,18 +4,13 @@ This report is for you to document the progres of your project. You should also 
 
 ## What have I done last week
 
--   Worked on...
--   Worked on...
--   Changed....
+- Manged to get the Advance Data Viewer working well
 
 ## What do I plan to do next week
 
--   Worked on...
--   Worked on...
--   Changed....
+- Work on the basic Algorithm
+- Add the basic result endpoint which utilises the algorithm
 
 ## Additional Thoughts
 
--   VSCode is sick.
--   This addon is fabulous.
--   Lecturer is awesome.
+- So far pretty simple, same process as last term.

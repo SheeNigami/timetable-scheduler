@@ -4,18 +4,13 @@ This report is for you to document the progres of your project. You should also 
 
 ## What have I done last week
 
--   Worked on...
--   Worked on...
--   Changed....
+- Got the Basic Result Viewer to work.
 
 ## What do I plan to do next week
 
--   Worked on...
--   Worked on...
--   Changed....
+- Finish the Advanced algorithm with the Get Advance Result endpoint.
+- Integrate it with the Frontend.
 
 ## Additional Thoughts
 
--   VSCode is sick.
--   This addon is fabulous.
--   Lecturer is awesome.
+- Getting the Hall no. to display in the frontend was tricker than expected, especially as there was no hallNo in the response. (I had to add the hall no. to the response in the frontend myself before drawing the datatable).

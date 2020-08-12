@@ -4,18 +4,12 @@ This report is for you to document the progres of your project. You should also 
 
 ## What have I done last week
 
--   Worked on...
--   Worked on...
--   Changed....
+- Finished the Advance Bulk Insert endpoint and tested it on the backend test runner, everything is working well, along with the basic bulk insert endpoint.
 
 ## What do I plan to do next week
 
--   Worked on...
--   Worked on...
--   Changed....
+- Make a Get Data endpoint for Advance data viewer
 
 ## Additional Thoughts
 
--   VSCode is sick.
--   This addon is fabulous.
--   Lecturer is awesome.
+- Part 1 done!

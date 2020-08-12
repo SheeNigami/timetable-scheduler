@@ -4,18 +4,14 @@ This report is for you to document the progres of your project. You should also 
 
 ## What have I done last week
 
--   Worked on...
--   Worked on...
--   Changed....
+- Finished the advanced algorithm with the Get Advance Result endpoint. Tested with the backend test runner, all tests passed!
+- Integrated the endpoint into the frontend to be able to compute result.
 
 ## What do I plan to do next week
 
--   Worked on...
--   Worked on...
--   Changed....
+- Host the backend and frontend on heroku and github pages respectively.
 
 ## Additional Thoughts
 
--   VSCode is sick.
--   This addon is fabulous.
--   Lecturer is awesome.
+- The Advanced algorithm was pretty hard to come up with, I had to ask the lecturer for help in order to draft up the algorithm and eventually code it.
+- Finally managed to pass all the tests in the backend test runner!

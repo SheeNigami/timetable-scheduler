@@ -4,18 +4,15 @@ This report is for you to document the progres of your project. You should also 
 
 ## What have I done last week
 
--   Worked on...
--   Worked on...
--   Changed....
+- Hosted Backend on Heroku
+- Hosted Frontend on Github Pages
+- Made sure that the frontend and backend could communicate properly with one another.
 
 ## What do I plan to do next week
 
--   Worked on...
--   Worked on...
--   Changed....
+- Make slides and prepare for the presentation/demo.
 
 ## Additional Thoughts
 
--   VSCode is sick.
--   This addon is fabulous.
--   Lecturer is awesome.
+- We still have to watch out for CORS policies and getting the correct endpoints after hosting our frontend/backend to ensure that they are communicating with one another properly without any issues.
+- Being able to host a website for free on the internet is amazing!
