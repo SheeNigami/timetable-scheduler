@@ -15,6 +15,32 @@ Each API should include
 
 > Errors and it's corresponding code can be defined by yourself. You need not follow HTTP errors.
 
+## Backend Confirmation
+
+| attribute   | value       |
+| ----------- | ----------- |
+| HTTP Method | GET         |
+| Endpoint    | /           |
+
+### Parameters
+
+| parameter | datatype        | example   |
+| --------- | --------------- | --------- |
+| NIL       | NIL             | NIL       |
+
+### Response Body
+
+```json
+{
+    "response": "The teamteam backend is up and running!"
+}
+```
+
+### Error
+
+No response
+
+
 ## Reset Database
 
 | attribute   | value       |

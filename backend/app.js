@@ -18,7 +18,7 @@ var Technicians = require('./models/technicians.js');
 var Algos = require('./algo.js');
 
 app.get('/', (req,res) => {
-    res.status(200).send("The teamteam backend is up and running!");
+    res.status(200).send({"response": "The teamteam backend is up and running!"});
 });
 
 // Reset database
