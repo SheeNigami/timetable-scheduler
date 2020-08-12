@@ -120,7 +120,7 @@
             var semesterId = $('#semesterId').val();
             var dayOfWeek = $('#dayOfWeek').val();
             $.ajax({
-                url: "http://localhost:3000/basic/result?facultyId=" + facultyId + "&semesterId=" + semesterId + "&dayOfWeek=" + dayOfWeek,
+                url: "https://teamteam2a11.herokuapp.com/basic/result?facultyId=" + facultyId + "&semesterId=" + semesterId + "&dayOfWeek=" + dayOfWeek,
                 type: "get",
             }).done(function (result) {
                 Table.clear().draw();
