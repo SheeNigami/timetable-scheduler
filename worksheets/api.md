@@ -15,6 +15,37 @@ Each API should include
 
 > Errors and it's corresponding code can be defined by yourself. You need not follow HTTP errors.
 
+## Reset Database
+
+| attribute   | value       |
+| ----------- | ----------- |
+| HTTP Method | GET         |
+| Endpoint    | /reset      |
+
+### Parameters
+
+| parameter | datatype        | example   |
+| --------- | --------------- | --------- |
+| NIL       | NIL             | NIL       |
+
+### Response Body
+
+```json
+{
+    "results": "success"
+}
+```
+
+### Error
+
+```json
+{
+    "error": "There was a server error",
+    "code" : code
+}
+```
+
+
 ## Get All Data (Lectures)
 
 | attribute   | value       |
@@ -55,33 +86,18 @@ Each API should include
 
 ```json
 {
-  length: 207,
-  name: 'error',
-  severity: 'ERROR',
-  code: code,
-  detail: details,
-  hint: undefined,
-  position: undefined,
-  internalPosition: undefined,
-  internalQuery: undefined,
-  where: undefined,
-  schema: 'public',
-  table: 'lectures',
-  column: undefined,
-  dataType: undefined,
-  constraint: constraint,
-  file: file,
-  line: line,
-  routine: routine
+    "error": "There was a server error",
+    "code" : code
 }
 ```
 
+
 ## Basic Insert API
 
-| attribute   | value       |
-| ----------- | ----------- |
-| HTTP Method | POST        |
-| Endpoint    | /basic/data |
+| attribute   | value         |
+| ----------- | -----------   |
+| HTTP Method | POST          |
+| Endpoint    | /basic/insert |
 
 ### Parameters
 
@@ -108,22 +124,162 @@ Each API should include
             "dayOfWeek": 2,
             "startTime": "1500",
             "endTime": "1830"
-        },      
+        }
+    ]
+}
+```
+
+### Response Body
+
+```json
+{
+    "results": "success"
+}
+```
+
+### Error
+
+```json
+{
+    "error": "Key (\"lectureId\")=(4192650317) already exists.",
+    "code": "23505"
+}
+```
+
+## Get Basic Result
+
+| attribute   | value         |
+| ----------- | -----------   |
+| HTTP Method | GET           |
+| Endpoint    | /basic/result |
+
+### Parameters
+
+| parameter  | datatype        | example    |
+| ---------  | --------------- | ---------  |
+| facultyId  | string          | 1100000000 |
+| semesterId | string          | 1100000000 |
+| dayOfWeek  | string          |     4      |
+
+### Response Body
+
+```json
+{
+    "result": [
+        [
+            {
+                "lectureId": "1000000001",
+                "startTime": "1000",
+                "endTime": "1100"
+            }
+        ],
+        [
+            {
+                "lectureId": "1000000002",
+                "startTime": "1030",
+                "endTime": "1130"
+            }
+        ]
+    ]
+}
+```
+
+### Error
+
+```json
+{
+    "error": "There was an error with getting the day's lectures",
+    "code" : code
+}
+```
+
+
+## Get All Data (Technicians)
+
+| attribute   | value         |
+| ----------- | -----------   |
+| HTTP Method | GET           |
+| Endpoint    | /advance/data |
+
+### Parameters
+
+| parameter | datatype        | example   |
+| --------- | --------------- | --------- |
+| NIL       | NIL             | NIL       |
+
+### Response Body
+
+```json
+[
+    {
+        "technicianId": "9000000001",
+        "semesterId": "9990000007",
+        "facultyId": "9900000001",
+        "dayOfWeek": "1",
+        "startTime": "1000",
+        "endTime": "1100"
+    },
+    {
+        "technicianId": "9000000002",
+        "semesterId": "9990000007",
+        "facultyId": "9900000001",
+        "dayOfWeek": "1",
+        "startTime": "1000",
+        "endTime": "1130"
+    }
+]
+```
+
+### Error
+
+```json
+{
+    "error": "There was a server error",
+    "code" : code
+}
+```
+
+
+## Advance Insert API
+
+| attribute   | value           |
+| ----------- | -----------     |
+| HTTP Method | POST            |
+| Endpoint    | /advance/insert |
+
+### Parameters
+
+| parameter | datatype        | example   |
+| --------- | --------------- | --------- |
+| NIL       | NIL             | NIL       |
+
+### Request Body
+```json
+{
+    "data": [
         {
-            "lectureId": 1234563893,
-            "semesterId": 2234567890,
-            "facultyId": 2234567890,
+            "technicianId": 1234567890,
+            "semesterId": 9999999991,
+            "facultyId": 9999999991,
             "dayOfWeek": 1,
-            "startTime": "1100",
+            "startTime": "1200",
             "endTime": "1430"
-        },      
+        },
         {
-            "lectureId": 1234568893,
-            "semesterId": 1234567890,
-            "facultyId": 1234567890,
-            "dayOfWeek": 6,
-            "startTime": "1500",
-            "endTime": "1730"
+            "technicianId": 1234567891,
+            "semesterId": 9999999992,
+            "facultyId": 9999999991,
+            "dayOfWeek": 2,
+            "startTime": "0900",
+            "endTime": "1030"
+        },
+        {
+            "technicianId": 1234567892,
+            "semesterId": 9999999991,
+            "facultyId": 9999999991,
+            "dayOfWeek": 3,
+            "startTime": "1200",
+            "endTime": "1830"
         }
     ]
 }
@@ -143,5 +299,53 @@ Each API should include
 {
     "error": "Key (\"lectureId\")=(4192650317) already exists.",
     "code": "23505"
+}
+```
+
+## Get Advance Result
+
+| attribute   | value           |
+| ----------- | -----------     |
+| HTTP Method | GET             |
+| Endpoint    | /advance/result |
+
+### Parameters
+
+| parameter  | datatype        | example    |
+| ---------  | --------------- | ---------  |
+| facultyId  | string          | 1100000000 |
+| semesterId | string          | 1100000000 |
+| dayOfWeek  | string          |     4      |
+
+### Response Body
+
+```json
+{
+    "result": [
+        {
+            "surplus": 1,
+            "startTime": "1000",
+            "endTime": "1030"
+        },
+        {
+            "surplus": 0,
+            "startTime": "1030",
+            "endTime": "1100"
+        },
+        {
+            "surplus": 0,
+            "startTime": "1100",
+            "endTime": "1130"
+        }
+    ]
+}
+```
+
+### Error
+
+```json
+{
+    "error": "There was an error with getting the day's lectures",
+    "code" : code
 }
 ```
