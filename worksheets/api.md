@@ -155,9 +155,11 @@ Each API should include
 
 ### Parameters
 
-| parameter | datatype        | example    |
-| --------- | --------------- | ---------  |
-| facultyId | int             | 1100000000 |
+| parameter  | datatype        | example    |
+| ---------  | --------------- | ---------  |
+| facultyId  | string          | 1100000000 |
+| semesterId | string          | 1100000000 |
+| dayOfWeek  | string          |     4      |
 
 ### Response Body
 
@@ -297,5 +299,53 @@ Each API should include
 {
     "error": "Key (\"lectureId\")=(4192650317) already exists.",
     "code": "23505"
+}
+```
+
+## Get Advance Result
+
+| attribute   | value           |
+| ----------- | -----------     |
+| HTTP Method | GET             |
+| Endpoint    | /advance/result |
+
+### Parameters
+
+| parameter  | datatype        | example    |
+| ---------  | --------------- | ---------  |
+| facultyId  | string          | 1100000000 |
+| semesterId | string          | 1100000000 |
+| dayOfWeek  | string          |     4      |
+
+### Response Body
+
+```json
+{
+    "result": [
+        {
+            "surplus": 1,
+            "startTime": "1000",
+            "endTime": "1030"
+        },
+        {
+            "surplus": 0,
+            "startTime": "1030",
+            "endTime": "1100"
+        },
+        {
+            "surplus": 0,
+            "startTime": "1100",
+            "endTime": "1130"
+        }
+    ]
+}
+```
+
+### Error
+
+```json
+{
+    "error": "There was an error with getting the day's lectures",
+    "code" : code
 }
 ```
