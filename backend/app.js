@@ -17,6 +17,10 @@ var Technicians = require('./models/technicians.js');
 // Algorithms
 var Algos = require('./algo.js');
 
+app.get('/', (req,res) => {
+    res.status(200).send("The teamteam backend is up and running!");
+});
+
 // Reset database
 app.get('/reset', (req, res) => {
     Lectures.deleteLectures().then(() => {
